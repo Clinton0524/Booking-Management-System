@@ -63,6 +63,7 @@ const CreateBooking = () => {
     };
 
     const result = await dispatch(createBooking(bookingData));
+    
     if (createBooking.fulfilled.match(result)) {
       alert('Booking created successfully!');
       navigate('/dashboard');

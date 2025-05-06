@@ -30,7 +30,7 @@ export const createBooking = createAsyncThunk(
       );
 
       const data = await response.json();
-
+      console.log(data);
       if (!response.ok) {
         return rejectWithValue(data);
       }
@@ -82,7 +82,7 @@ const BookingSlice = createSlice({
       })
       .addCase(fetchBookings.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.bookings = action.payload; 
+        state.bookings = action.payload;
       })
       .addCase(fetchBookings.rejected, (state, action) => {
         state.status = "failed";
@@ -100,7 +100,7 @@ const BookingSlice = createSlice({
         state.status = "failed";
         state.error = action.error.message;
       })
-       //createBooking  async actions
+      //createBooking  async actions
       .addCase(createBooking.fulfilled, (state, action) => {
         state.bookings = [action.payload, ...state.bookings];
       })

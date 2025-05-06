@@ -18,7 +18,7 @@ const Sidebar = () => {
   return (
     <div
       className="d-flex flex-column p-3 bg-light"
-      style={{ width: "200px", height: "100vh" }}
+      style={{ width: "150px", height: "100vh" }}
     >
       <h4 className="mb-4">Dashboard</h4>
       <Nav className="flex-column">

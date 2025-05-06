@@ -74,6 +74,7 @@ const Dashboard = () => {
       onScroll={handleScroll}
       style={{ overflowY: "auto", height: "95vh" }}
     >
+      <div className="d-flex"></div>
       <h2>Bookings Dashboard</h2>
       <Button
         variant="success"

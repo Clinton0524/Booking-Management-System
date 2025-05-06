@@ -11,8 +11,10 @@ const App = () => (
   <Router>
     <div className="container-fluid">
       <div className="row">
+   
         <Sidebar />
-        <div className="col-8 ">
+     
+        <div className="col-lg-9 col-md-9 col-sm-6 col-6">
           <Routes>
             <Route path="/" element={<LoginPage />} />
             <Route path="/dashboard" element={<Dashboard />} />
