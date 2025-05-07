@@ -1,75 +1,104 @@
-
-# Booking-Management-System
 Booking Management System
+Overview
+This is a Booking Management System that allows users to manage bookings effectively. The project consists of a frontend built with React and Redux for state management, and it interacts with an API for managing booking data (such as fetching and adding bookings).
 
-# Getting Started with Create React App
+Features
+Dashboard: View a list of bookings with the option to search by Booking ID.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Pagination: Paginate through the list of bookings.
 
-## Available Scripts
+Add Booking: Add new bookings.
 
-In the project directory, you can run:
+View Booking Details: View detailed information of a booking.
 
-### `npm start`
+Search: Filter bookings based on Booking ID.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Authentication: Login functionality with JWT authentication for secure user access.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Token Storage: The system stores JWT tokens in localStorage for session management.
 
-### `npm test`
+API Integration: The app communicates with a remote backend API for performing CRUD operations on bookings.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Frontend:
 
-### `npm run build`
+React.js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Redux Toolkit (for state management)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+React Router (for routing)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+React Bootstrap (for UI components)
 
-### `npm run eject`
+Fetch API (for API calls)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Others:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+JWT (JSON Web Token) for authentication and token management
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Getting Started
+Clone this repository to your local machine.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Installation
+Clone the repository:
+git clone https://github.com/Clinton0524/Booking-Management-System.git
 
-## Learn More
+Install the dependencies:
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Run the application locally:
+npm start
+This will start the development server at http://localhost:3000.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Features and Usage
+Dashboard: The dashboard displays a list of all bookings and allows you to:
 
-### Code Splitting
+View: Click on a booking ID to view detailed information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Search: Filter bookings by Booking ID.
 
-### Analyzing the Bundle Size
+Add Booking
+To add a new booking, click on the Add Booking button, fill in the necessary information, and submit the form.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Login
+Login: Users can log in using their credentials (username and password). The system uses JWT for authentication, and the token is stored in localStorage.
 
-### Making a Progressive Web App
+API Endpoints
+GET /booking: Fetch all booking id.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+GET /booking/{id}: Get booking details as per id.
 
-### Advanced Configuration
+POST /booking: Create a new booking.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Project Structure
+/src
+  /Components
+    /BookingDetails.js  // Component to show booking details
+    /CreateBooking.js   // Component for creating a new booking
+    /Dashboard.js       // Dashboard component that shows all bookings
+    /LoginPage.js       // Page for login
+    /Sidebar            // Component for sidebar
+  /Redux
+    /BookingSlice.js    // Redux slice for booking operations(add,get booking ids,get booking details by id)
+    /AuthSlice.js       // Redux slice for user authentication
+    /Store.js           // Redux store setup
+  /App.js               // Main application component where routing is setup
+  /index.js             // Entry point of the React app
+  /App.css              // Styles for the app
+  /index.css            // Global styles
 
-### Deployment
+Notes:
+`Used simple bootstrap to make the pages responsive
+`There was a problem with the api i was not able to fetch the api in my local server so I use 
+ https://cors-anywhere.herokuapp.com/ in front of the API URL because the browser blocks requests
+ to other websites if they don’t allow it (that’s called a CORS issue). This tool acts like a middleman
+ it fetches the data for me and adds the right headers so the browser doesn’t block it.
+`Couldnt show the first name and last name on the list because the get booking api does not provide the information.
+`When i add the bookings it is getting updated in list (i have stored it in localstorage) but as the list is not stable
+ it appears randomly in the list not first so i hvae added a console log after submitting the form so that we get the booking id.
+ If you take the booking id and search you will get the data.
+`I have not addeed the edit and delete because the backend is not allowing me to edit or delete the data
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 
