@@ -14,7 +14,7 @@ const App = () => (
    
         <Sidebar />
      
-        <div className="col-lg-9 col-md-9 col-sm-6 col-6">
+        <div className="col-lg-9 col-md-9 col-sm-9 col-8">
           <Routes>
             <Route path="/" element={<LoginPage />} />
             <Route path="/dashboard" element={<Dashboard />} />
